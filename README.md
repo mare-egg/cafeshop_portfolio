@@ -23,7 +23,7 @@
 ## Usage
 
 ```
-`$ git clone https://github.com/aocattleya/Ramen-Timer.git`
+`$ git clone https://github.com/mare-egg/cafeshop_portfolio.git`
 ```
 
 ## Requirement
