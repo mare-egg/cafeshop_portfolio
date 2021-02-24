@@ -1,5 +1,7 @@
 <?php
 /*
+ * 管理者画面
+ * 会員登録時の内容
  * アクセスURL:http://localhost/SC/cafeshop/admin/detail2.php
  */
 namespace cafeshop;

@@ -1,5 +1,8 @@
 <?php
 /*
+ * 管理者画面
+ * 会員登録一覧/アカウント状況（有効か無効（退会済み））
+ * アカウント状況の修正（無効・有効の切り替え）
  * アクセスURL:http://localhost/SC/cafeshop/admin/list2.php
  */
 namespace cafeshop;
