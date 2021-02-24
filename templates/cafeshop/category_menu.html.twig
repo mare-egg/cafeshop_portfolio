@@ -1,0 +1,11 @@
+<div id="category">
+    <ul class="header-dropmenu">
+        <li>
+          <a href="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}list.php">全て</a>
+          <ul>
+            {% for value in cateArr %}
+            <li><a href="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}list.php?ctg_id={{value.ctg_id}}">{{value.category_name}}</a></li>
+            {% endfor %}
+          </ul>
+    </ul>
+</div>

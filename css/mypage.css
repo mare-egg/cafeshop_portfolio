@@ -1,0 +1,219 @@
+*
+{
+  margin: 0;
+  padding: 0;
+}
+
+header
+{
+  margin-top: 30px;
+  margin-bottom: 0;
+  font-size: 20px;
+  text-align: center;
+}
+
+header h1
+{
+  text-decoration: none;
+  color:black;
+  font-size: 25px;
+}
+
+body
+{
+  background: url(../cafeshop/images/mypage.jpg) no-repeat;
+  background-size: cover;
+}
+
+main
+{
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+}
+
+.mypage-form
+{
+  margin-top: 30px;
+  flex: 1;
+  max-width: 550px;
+  min-width: 550px;
+  min-height: 100vh;
+}
+
+table
+{
+  padding: 0;
+  margin: 5px;
+  width: 470px;
+}
+
+.mypage-form table tr th
+{
+  color: rgba(255, 255, 255, 0.808); 
+  font-size: 20px;
+  min-width: 100px;
+}
+
+.mypage-form table tr td
+{
+  color:black;
+  font-weight: bold;
+  font-size: 18px;
+  padding-left: 20px;
+}
+
+
+.mypage-form table
+{
+  padding: 0.5em;
+  color: rgb(255, 255, 255);
+  background:rgba(255, 255, 255, 0.3);
+  border-left: solid 5px #ffae5833;
+}
+
+.post
+{
+color: rgb(0, 0, 0);
+border: none;
+border:solid gray 1px;
+width: 120px;
+height: 35px;
+font-size: 15px;
+font-weight: 600;
+text-transform: uppercase;
+letter-spacing: 2px;
+border-radius: 5px;
+margin-left: 80px;
+}
+
+.mypage-form .text-box
+{
+  background: #000;
+  color: #fff;
+  border: none;
+  width: calc(50% - 70px);
+  height: 25px;
+  min-width: 252px;
+  padding:12px;
+  font-size: 15px;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.mypage-form .text-name
+{
+  background: #000;
+  color: #fff;
+  border: none;
+  width: calc(50% - 100px);
+  height: 25px;
+  min-width: 110px;
+  padding:12px;
+  font-size: 15px;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.mypage-form .text
+{
+  background: #000;
+  color: #fff;
+  border: none;
+  width: calc(50% - 120px);
+  height: 25px;
+  min-width: 60px;
+  padding:12px;
+  font-size: 15px;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.mypage-form .text-call
+{
+  background: #000;
+  color: #fff;
+  border: none;
+  width: calc(50% - 100px);
+  height: 25px;
+  min-width: 50px;
+  max-width: 70px;
+  padding:12px;
+  font-size: 15px;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  margin-top: 5px;
+  margin-bottom: 15px;
+  opacity: 0.8;
+}
+
+.mypage-form .text-box:first-child
+{
+  margin-right: 15px;
+}
+
+div.box
+{
+  margin-left: -75px;
+  margin-top: 25px;
+  min-width: 390px;
+}
+
+p.history
+{
+  text-align: center;
+  font-size: 26px;
+  margin-right: 50px;
+  margin-bottom: 7px;
+}
+
+div.mypage-form p
+{
+  text-align: center;
+  font-size: 24px;
+  margin-right: 70px;
+}
+
+div.data
+{
+  background:rgba(255, 255, 255, 0.4);
+  font-weight: bold;
+}
+
+hr
+{
+  height: 3px;
+  background: rgba(68, 196, 115, 0.295);
+  border: none;
+}
+
+
+@media screen and (max-width:950px)
+{
+  .mypage-section
+  {
+    flex-direction: column;
+  }
+
+  main 
+  {
+    margin:0;
+    padding:0;
+  }
+
+  header h1
+  {
+    font-size: 25px;
+  }
+
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact From</title>
+  <link rel="stylesheet" href="../../css/contact.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="{{constant('cafeshop\\Bootstrap::APP_URL')}}js/contact.js"></script>
+</head>
+<body>
+
+  <div class="contact-section">
+    <div class="contact-info">
+      <div><i class="fas fa-map-marker-alt"></i>Adress,City,Contry</div>
+      <div><i class="fas fa-envelope"></i>roa.caferia@gmail.com</div>
+      <div><i class="fas fa-phone"></i>+00 0000 000 000</div>
+      <div><i class="fas fa-clock"></i>Mon - Fri 8:00 AM to 5:00 PM</div>
+    </div>
+  </div>
+  <div class="contact-form">
+    <h1>{{ alert }}</h1>
+    <h2>Roa Contact</h2>
+    <form class="contact" action="" method="post">
+      <p>氏名</p>
+      <input type="text" name="name" class="text-box" placeholder="氏名" required>
+      <p>Emailアドレス</p>
+      <input type="email" name="email" class="text-box" placeholder="Email アドレス" required><br>
+      <p>お電話番号（半角英数字）</p>
+      <input type="text" name="tel" class="text-box" placeholder="お電話番号" required><br>
+      <p>お問い合わせ（件名）</p>
+      <input type="text" name="subject" class="text-box" placeholder="件名" required>
+      <p>お問い合わせ内容</p>
+      <textarea name="message" rows="5" placeholder="お問い合わせ内容" required></textarea>
+    <div class="btn">
+      <input type="submit" name="submit" class="send-btn" value="送信">
+      <input type="button" name="back" class="send-btn" value="戻る" onclick="history.back(); return false;">
+    </div>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,186 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body
+{
+  min-height: 100vh;
+  background: url(../cafeshop/images/contact.jpg) no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirm-form
+{
+  max-width: 600px;
+  margin-right: 50px;
+}
+
+.confirm-form
+{
+  flex: 1;
+}
+
+.confirm-form table tr th
+{
+  color: rgba(255, 255, 255, 0.808); 
+  background-color: rgba(0, 0, 0, 0.26);
+  border-radius: 5px;
+}
+
+.means
+{
+  color: rgba(255, 255, 255, 0.808); 
+}
+
+.confirm-form h2
+{
+  color:rgb(25, 108, 187);
+  text-align: center;
+  font-size: 35px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.confirm-form .text-box
+{
+  background: #000;
+  color: #fff;
+  border: none;
+  width: calc(50% - 50px);
+  height: 50px;
+  min-width: 280px;
+  padding:12px;
+  font-size: 15px;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.confirm-form .text-name
+{
+  background: #000;
+  color: #fff;
+  border: none;
+  width: calc(50% - 100px);
+  height: 40px;
+  min-width: 220px;
+  padding:12px;
+  font-size: 15px;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.confirm-form .text
+{
+  background: #000;
+  color: #fff;
+  border: none;
+  width: calc(50% - 100px);
+  height: 25px;
+  min-width: 100px;
+  padding:12px;
+  font-size: 15px;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.confirm-form .text-call
+{
+  background: #000;
+  color: #fff;
+  border: none;
+  width: calc(50% - 100px);
+  height: 30px;
+  min-width: 120px;
+  padding:12px;
+  font-size: 15px;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  margin-top: 5px;
+  margin-bottom: 15px;
+  opacity: 0.8;
+}
+
+.confirm-form .text-box:first-child
+{
+  margin-right: 15px;
+}
+
+.confirm-form textarea
+{
+  background: #000;
+  color:#fff;
+  border: none;
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  min-height: 100px;
+  max-height: 180px;
+  resize:vertical;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.post
+{
+  color: rgb(0, 0, 0);
+  border: none;
+  border:solid gray 1px;
+  width: 120px;
+  height: 35px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  margin-left: 180px;
+}
+
+.postback
+{
+  color: rgb(0, 0, 0);
+  border: none;
+  border:solid gray 1px;
+  width: 120px;
+  height: 35px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  margin-left: 80px;
+}
+
+
+@media screen and (max-width:950px)
+{
+  .confirm-section 
+  {
+    flex-direction: column;
+  }
+
+  .confirm-form
+  {
+    margin: 30px 50px;
+  }
+
+  .confirm-form h2
+  {
+    font-size: 30px;
+  }
+}

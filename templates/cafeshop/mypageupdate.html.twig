@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="{{constant('cafeshop\\Bootstrap::APP_URL')}}css/confirm.css" rel="stylesheet">
+        <title>更新登録確認</title>
+    </head>
+    <body>
+        <form method="POST" action="mypage.php">
+        <div class="confirm-form">
+            <table>
+                <tr>
+                    <th>お名前(氏名)</th>
+                    <td>{{mypageArr.family_name}} {{mypageArr.first_name}}</td>
+                </tr>
+                <tr>
+                    <th>お名前(かな)</th>
+                    <td>{{mypageArr.family_name_kana}} {{mypageArr.first_name_kana}}</td>
+                </tr>
+                <tr>
+                    <th>ユーザー名</th>
+                    <td>{{mypageArr.user_name}}</td>
+                </tr>
+                <tr>
+                    <th>性別</th>
+                    <td>
+                        {% if mypageArr.sex == '1' %}男性{% elseif mypageArr.sex == '2' %}女性{% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>生年月日</th>
+                    <td>{{mypageArr.year}}年 {{mypageArr.month}}月 {{mypageArr.day}}日</td>
+                </tr>
+                <tr>
+                    <th>郵便番号</th>
+                    <td>{{mypageArr.zip1}} - {{mypageArr.zip2}}</td>
+                </tr>
+                <tr>
+                    <th>住所</th>
+                    <td>{{mypageArr.address}}</td>
+                </tr>
+                <tr>
+                    <th>メールアドレス</th>
+                    <td>{{mypageArr.email}}</td>
+                </tr>
+                <tr>
+                    <th>電話番号</th>
+                    <td>{{mypageArr.tel1}} - {{mypageArr.tel2}} - {{mypageArr.tel3}}</td>
+                </tr>
+            </table>
+            <div>
+                <input type="button" name="back" class="pos" value="戻る" onclick="history.back(); return false;">
+                <input type="submit" name="update" class="pos" value="更新">
+                {% for key,value in mypageArr %}
+                    {% if value is iterable %}
+                        {% for v in value %}
+                            <input type="hidden" name="{{key}}[]" value="{{v}}">
+                        {% endfor %}
+                    {% else %}
+                        <input type="hidden" name="{{key}}" value="{{value}}">
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        </form>
+    </body>
+</html>

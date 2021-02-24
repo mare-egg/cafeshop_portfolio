@@ -1,0 +1,70 @@
+ul.header-dropmenu
+{
+  list-style: none;
+  width: 150px;
+  height: 35px;
+  margin: 0 auto;
+  padding: 0;
+  display: table;
+  table-layout: fixed;
+  margin-top: 10px;
+  margin-left: 60px;
+  padding-bottom: 50px;
+}
+
+ul.header-dropmenu > li
+{
+  background: rgba(157, 186, 230, 0.3);
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  border: 2px solid #00000027;
+}
+
+ul.header-dropmenu li a
+{
+  display: block;
+  text-align: center;
+  line-height: 40px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.74);
+}
+
+ul.header-dropmenu li ul
+{
+  visibility: hidden;
+  width: 150px;
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: -3px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #222; /*マウスオーバー時の枠線*/
+  border-top: none;
+}
+
+ul.header-dropmenu li:hover ul
+{
+  visibility: visible;
+}
+
+ul.header-dropmenu li ul li
+{
+  background:rgba(6, 20, 2, 0.6);
+  transition: all .2s ease;
+}
+
+ul.header-dropmenu > li:hover
+{
+  background:rgba(255, 255, 255, 0.4);
+  border: 2px solid #222; /*マウスオーバー時の枠線*/
+  border-bottom: none;
+}
+
+ul.header-dropmenu li:hover ul li:hover
+{
+  background:rgba(255, 255, 255, 0.4);
+}

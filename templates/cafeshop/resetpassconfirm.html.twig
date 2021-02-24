@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>RESET PASSWORD FORM</title>
+  <link href="{{constant('cafeshop\\Bootstrap::APP_URL')}}css/login.css" rel="stylesheet">
+  <link href="{{constant('cafeshop\\Bootstrap::APP_URL')}}css/style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="center">
+    <h1>パスワード再設定</h1>
+    <form action="" method="POST">
+      <div><span class="red">{% if message is not empty %} {{message}} {% endif %}</span></div>
+      <div class="txt_field">
+          <input type="password" name="password" value="" placeholder="パスワードを入力">
+          <span></span>
+          <label>Password</label>
+      </div>
+      <div class="txt_field">
+          <input type="password" name="password2" value="" placeholder="パスワードを入力(確認)">
+          <span></span>
+          <label>Password ReEnter</label>
+      </div>
+      <div><span class="red">{% if error is not empty %} {{error}} {% endif %}</span></div>
+      <input type="submit" name="reset" value="再設定">
+      <ul>
+        <li><a href="Login.php">ログイン画面に進む</a></li>
+      </ul>
+    </form>
+  </div>
+  <script>
+    var url = new URL(window.location.href);
+    var params = url.searchParams;
+
+    console.log(params.get('passReset'));
+  </script>
+</body>
+</html>

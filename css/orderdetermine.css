@@ -1,0 +1,75 @@
+header
+{
+  margin:0;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 19px;
+  text-align: center;
+  width: 100%;
+  border-bottom: solid 5px #0d1a114b;
+}
+
+header div.font-effect-anaglyph
+{
+  font-family:'Chrome, Firefox, Opera, Safari' ;
+  color: black;
+  font-size: 35px;
+  font-weight: bolder;
+}
+
+header a
+{
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  border: none;
+  border:solid gray 1px;
+  width: 120px;
+  height: 37px;
+  font-size: 17px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  background-color: rgba(0, 255, 255, 0.356);
+}
+
+body
+{
+  background: url(../cafeshop/images/detail.jpg) no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  font-family: Verdana, sans-serif;
+  margin: 0;
+}
+
+
+div#wrapper
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.home
+{
+  color: rgb(0, 0, 0);
+  border:solid gray 1px;
+  background-color: rgb(231, 231, 231);
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 5px;
+  letter-spacing: 10px;
+  border-radius: 5px;
+}
+
+div.alert
+{
+  text-align: center;
+}
+
+div.alert p
+{
+  font-size: 24px;
+}

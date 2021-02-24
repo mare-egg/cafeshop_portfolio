@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="{{constant('cafeshop\\Bootstrap::APP_URL')}}css/cafeshop.css" rel="stylesheet">
+        <link href="{{constant('cafeshop\\Bootstrap::APP_URL')}}css/category.css" rel="stylesheet">
+        <link href="{{constant('cafeshop\\Bootstrap::APP_URL')}}css/paging.css" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{constant('cafeshop\\Bootstrap::APP_URL')}}css/slickhome.css">
+        <link rel="stylesheet" href="{{constant('cafeshop\\Bootstrap::APP_URL')}}css/slick.css">
+        <link rel="stylesheet" href="{{constant('cafeshop\\Bootstrap::APP_URL')}}css/slick-theme.css">
+    </head>
+    <header id="list">
+        <div class="cafeshop">
+            <ul class="slider">
+                <li><img class="home" src="images/slick1.jpg" alt="slick-img"></li>
+                <li><img class="home" src="images/slick2.jpg" alt="slick-img"></li>
+                <li><img class="home" src="images/slick3.jpg" alt="slick-img"></li>
+                <li><img class="home" src="images/slick4.jpg" alt="slick-img"></li>
+            </ul>
+            <a href="{{'http://localhost/SC/cafeshop/list.php'}}"><p>Roa Caferia</p></a>
+        </div>
+        <div class="top">
+            <p>こんにちわ{{username}}さん</p>
+        </div>
+        <ul id="nav">
+            <li><a href="{{'http://localhost/SC/cafeshop/Mypage.php'}}">MYPAGE</a></li>
+            <li><a href="{{'http://localhost/SC/cafeshop/Logout.php'}}">LOGOUT</a></li>
+            <li><a href="{{'http://localhost/SC/cafeshop/cart.php'}}">カート</a></li>
+            <li><a href="{{'http://localhost/SC/cafeshop/contact/index.php'}}">お問い合わせ</a></li>
+            <li><a href="{{'http://localhost/SC/cafeshop/about.php'}}">ABOUT</a></li>
+        </ul>
+    </header>
+    <hr>
+    <body>
+      <div id="search">
+        <form action="" class="search_container" method="GET">
+            <input type="text" name="title" value="{{title}}" placeholder="キーワード検索">
+            <input type="submit" value="&#xf002">
+        </form>
+        <div class="search-message">
+            {% if searchArr %}
+                {{ message }}
+            {% else %}
+                {{ error }}
+            {% endif %}
+        </div>
+      </div>
+        {% include 'category_menu.html.twig' %}
+
+        {% if searchArr %}
+            <div id="itemlist">
+                {% for value in searchArr %}
+                    <div class="item">
+                        <ul>
+                            <li class="name"><a href="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}detail.php?item_id={{value.item_id}}">{{value.item_name}}</a></li>
+                            <li class="price">&yen;{{value.price|number_format(0,'.',',')}}</li>
+                            {# 第一引数は小数点以下の表示、第二引数は小数点以下の表示をドットにしてあげる、第３引数もカンマにしてあげる意味 #}
+                            {# number_format(0,'.',',') ドットとカンマはこの場合なくてもいい、0は小数点以下は0という意味 #}
+                            <li class="image"><a href="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}detail.php?item_id={{value.item_id}}"><img class="img" src="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}images/{{value.image}}" alt="{{value.item_name}}"></a></li>
+                            <li class="detail"><a href="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}detail.php?item_id={{value.item_id}}">&raquo;詳細</a></li>
+                        </ul>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div id="itemlist">
+                {% for val in dataArr %}
+                    {% for value in val %}
+                    <div class="item">
+                        <ul>
+                            <li class="name"><a href="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}detail.php?item_id={{value.item_id}}">{{value.item_name}}</a></li>
+                            <li class="price">&yen;{{value.price|number_format(0,'.',',')}}</li>
+                            <li class="image"><a href="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}detail.php?item_id={{value.item_id}}"><img class="img" src="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}images/{{value.image}}" alt="{{value.item_name}}"></a></li>
+                            <li class="detail"><a href="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}detail.php?item_id={{value.item_id}}">&raquo;詳細</a></li>
+                        </ul>
+                    </div>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        {% endif %}
+        <ul class="paging">
+        {% set n = 1 %}
+        {% for n in n..pages %}
+            {% if n == now %}
+                <li><span class="active">{{now}}</span><li>
+            {% else %}
+                <li><a href="?page_id={{n}}&ctg_id={{ctg}}">{{n}}</a><li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="{{constant('cafeshop\\Bootstrap::APP_URL')}}js/slick.min.js"></script>
+        <script src="{{constant('cafeshop\\Bootstrap::APP_URL')}}js/main.js"></script>
+    </body>
+</html>

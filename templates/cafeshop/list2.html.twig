@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="{{constant('cafeshop\\Bootstrap::APP_URL')}}css/cafeshop.css" rel="stylesheet">
+        <title>会員一覧</title>
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>お名前</th>
+                <th>メール</th>
+                <th>性別</th>
+                <th>登録日時</th>
+                <th>アカウント状況</th>
+                <th>アカウント修正</th>
+            </tr>
+            {% for value in dataArr %}
+                <tr>
+                    <td>
+                        <a href="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}admin/detail2.php?mem_id={{value.mem_id}}">{{value.mem_id}}</a>
+                    </td>
+                    <td>
+                        <span style="font-size:60%;">{{value.family_name_kana}} {{value.first_name_kana}}</span><br>
+                        {{value.family_name}} {{value.first_name}}
+                    </td>
+                    <td>{{value.email}}</td>
+                    <td>{% if value.sex == '1' %}男性{% elseif value.sex == '2' %}女性{% endif %}</td>
+                    <td>{{value.regist_date}}</td>
+                    <td>{% if value.delete_flg == '0' %}有効{% elseif value.delete_flg == '1' %}退会済{% endif %}</td>
+                    <td>
+                        <a href="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}admin/list2.php?mem_id={{value.mem_id}}&delete_flg=1">無効</a>
+                        <a href="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}admin/list2.php?mem_id={{value.mem_id}}&delete_flg=0">有効</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

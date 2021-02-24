@@ -1,0 +1,358 @@
+*
+{
+  margin: 0;
+  padding: 0;
+}
+
+html
+{
+  background: url(../cafeshop/images/detail.jpg) no-repeat;
+  background-size: cover;
+}
+
+div#wrapper
+{
+  background-color:rgba(197, 211, 197, 0.702);
+}
+
+body
+{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div#item_detail
+{
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  display: flex;
+  margin-right: auto;
+  align-items: center;
+  flex: 1;
+}
+
+div.image
+{
+  align-items: center;
+}
+
+div.image .img
+{
+  width: 300px;
+  height: 200px;
+  margin-left: 30px;
+}
+
+div.detail
+{
+  margin-left: 35px;
+}
+
+div.detail dl dd.itemdetail
+{
+  min-width: 400px;
+  max-width:450px;
+}
+
+hr
+{
+  margin: 30px;
+  height: 5px;
+  background: rgba(13, 26, 17, 0.295);
+  border: none;
+}
+
+input[type="number"]
+{
+  width: 40px;
+  height: 20px;
+  margin-left: 20px;
+  font-size: large;
+}
+
+.itemname
+{
+  position: relative;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  font-size: 23px;
+}
+
+.itemname:after
+{
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  content: '';
+  height: 6px;
+  width: 285px;
+  background: -webkit-repeating-linear-gradient(45deg,#fff,#fff 2px, #000 2px, #000 4px);
+  background: repeating-linear-gradient(45deg,#fff,#fff 2px, #000 2px, #000 4px);
+}
+
+.price
+{
+  margin-bottom: 15px;
+  font-size: 23px;
+  font-family: 'Comic Sans MS';
+}
+
+.itemdetail
+{
+  margin-bottom: 30px;
+}
+
+.numcount
+{
+  margin-bottom: 15px;
+}
+
+input[type="button"]
+{
+  float:right;
+}
+
+div#cart input[type="button"]
+{
+  float: left;
+
+}
+
+.reviews
+{
+  width: auto; 
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.box
+{
+  text-align: center;
+  font-family: sans-serif;
+}
+
+div.reviews
+{
+  margin : 3em 0 1.5em ;
+  padding : 1em 1.5em ;
+  line-height : 1.8 ;
+  border : double 4px #333 ;
+}
+
+.reviewpost
+{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.b2
+{
+  margin-bottom: auto;
+}
+
+.b2 textarea
+{
+  background: rgba(247, 248, 247, 0.747);
+  color:black;
+  border: none;
+  width: 60%;
+  align-items:  center;
+  padding: 12px;
+  font-size: 18px;
+  max-width: 600px;
+  min-width: 400px;
+  min-height: 100px;
+  margin-bottom: 20px;
+}
+
+.b2 .reviewlist
+{
+  text-align: center;
+  padding-top: 55px;
+  font-size: 18px;
+}
+
+.b2 div#post
+{
+  height: 50px;
+  align-items: center;
+}
+
+.post
+{
+  color: rgb(0, 0, 0);
+  border: none;
+  border:solid gray 1px;
+  width: 120px;
+  height: 35px;
+  margin-right: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 5px;
+}
+
+.back
+{
+  text-decoration:none; 
+  color: rgb(0, 0, 0);
+  border:solid gray 1px;
+  background-color: rgb(231, 231, 231);
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 5px;
+  letter-spacing: 10px;
+  border-radius: 5px;
+}
+
+.comment
+{
+  text-align: center;
+  margin-bottom: 15px;
+  position: relative;
+  background: #ffffffcb;
+  box-shadow: 0px 0px 0px 4px #ffffffcb;
+  padding: 0.2em 0.5em;
+  max-width: 800px;
+}
+
+.comment:after
+{
+  position: absolute;
+  content: '';
+  right: -7px;
+  top: -7px;
+  border-width: 0 15px 15px 0;
+  border-style: solid;
+  border-color: #ffffffa4 #c5d3c5c9 #be2a2aa4;
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+ul
+{
+  z-index: 1;
+  cursor: pointer;
+}
+
+ul.header-dropmenu
+{
+  list-style: none;
+  width: 150px;
+  height: 35px;
+  margin: 0 auto;
+  padding: 0;
+  display: table;
+  table-layout: fixed;
+  margin-top: 10px;
+  margin-left: 80%;
+  padding-bottom: 50px;
+}
+
+ul.header-dropmenu > li
+{
+  background: rgba(157, 186, 230, 0.3);
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  border: 2px solid #00000091;
+}
+
+ul.header-dropmenu li a
+{
+  display: block;
+  text-align: center;
+  line-height: 40px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.74);
+}
+
+ul.header-dropmenu li ul
+{
+  visibility: hidden;
+  width: 150px;
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: -3px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #222;
+  border-top: none;
+}
+
+ul.header-dropmenu li:hover ul
+{
+  visibility: visible;
+}
+
+ul.header-dropmenu li ul li
+{
+  background:rgba(6, 20, 2, 0.6);
+  transition: all .2s ease;
+}
+
+ul.header-dropmenu > li:hover
+{
+  background:rgba(255, 255, 255, 0.4);
+  border: 2px solid #222;
+  border-bottom: none;
+}
+
+ul.header-dropmenu li:hover ul li:hover
+{
+  background:rgba(255, 255, 255, 0.4);
+}
+
+span
+{
+  color: red;
+}
+
+.fl
+{
+  position: relative;
+}
+
+#cart_in
+{
+  width: 60px;
+  height: 60px;
+  margin-left: 5px;
+  transition-duration: 0.3s;
+  box-shadow: 3px 5px 0 rgba(0, 0, 0, 0.651);
+  background-color: rgba(127, 255, 212, 0.842);
+  border-radius: 15%;
+  cursor: pointer;
+  margin-bottom:10px;
+}
+
+#cart_in:hover
+{
+  transition-duration: 0.3s;
+  transform: translate3d(0, 5px, 0);
+  box-shadow: none;
+  background: #fff;
+}
+
+#carticon
+{
+  position: absolute;
+  top: 3px;
+  left: 20px;
+  border-radius: 50%;
+  font-size: 10pt;
+  line-height: 1em;
+  padding: 2px 2px 0px 2px;
+  color: white;
+  border: 5px solid red;
+  background: red;
+}

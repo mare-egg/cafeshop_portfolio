@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="{{constant('cafeshop\\Bootstrap::APP_URL')}}js/cafeshop.js"></script>
+        <script src="{{constant('cafeshop\\Bootstrap::APP_URL')}}js/carticon.js"></script>
+        <link href="{{constant('cafeshop\\Bootstrap::APP_URL')}}css/detail.css" rel="stylesheet">
+    </head>
+    <body>
+        <input type="hidden" name="entry_url" value="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}" id="entry_url">
+        <div id="wrapper">
+            {% include 'category_menu.html.twig' %}
+            <div id="itemdata">
+                <div id="item_detail">
+                    <div class="image">
+                        <img class="img" src="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}images/{{itemData.image}}" alt="{{itemData.item_name}}">
+                    </div>
+                    <div class="detail">
+                        <dl>
+                            <dd class="itemname">{{itemData.item_name}}</dd>
+                            <dd class="price">&yen;{{itemData.price|number_format(0,'.',',')}}</dd>
+                            <div id="cart">
+                                {% if itemData.stock == '0' %}
+                                    <span>{{soldout}}</span>
+                                {% elseif itemData.stock < 6 %}
+                                    {% include 'cartin.html.twig' %}<span>{{little}}</span>
+                                {% else %}
+                                    {% include 'cartin.html.twig' %}
+                                {% endif %}
+                            </div>
+                            {% if itemData.stock != '0' %}
+                                <dd class="numcount">数量<input type="number" name="nam_id"  id="num_id" min=1 max={{itemData.stock}} value="1" required></dd>
+                            {% endif %}
+                                <dd class="itemdetail">{{itemData.detail}}</dd>
+                                
+                            <div class="home">
+                                <a class="back" href="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}list.php">一覧へ戻る</a>
+                            </div>
+                            <input type="hidden" name="item_id" id="item_id" value="{{itemData.item_id}}">
+                        </dl>
+                    </div>
+                </div>
+                <hr>
+                <div class="reviews">
+                    <div class="box b1">
+                        <p class="reviewpost">口コミを投稿する</p>
+                        {% if add_review is not empty %}
+                            {{message}}
+                        {% else %}
+                            <span>{{error}}<span>
+                        {% endif %}
+                    </div>
+
+                    <div class="box b2">
+                        <form action="" method="post">
+                            <textarea name="add_review" class="form-control" placeholder="口コミを記入してください。(文字数２５０文字まで)" maxlength=250></textarea>
+                            <div id="post">
+                                <input type="submit" name="submit" class="post revewin" value="投稿">
+                                <input name="reset" type="submit" class="post reset" value="リセット">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="box b3">
+                        <p class="reviewlist">クチコミ一覧( {{itemData.item_name}} )</p>
+                    </div>
+                    <div class="box b4">
+                        {% if reviews_data != false %}
+                            {% for review_data in reviews_data %}
+                                <div class="comment">
+                                    名前：{{review_data.user_name}}さん
+                                    （{{review_data.review_date}}）
+                                    <p>{{review_data.review_comment}}</p>
+                                </div>
+                            {% endfor %}
+                        {% elseif reviews_data == false %}
+                            <div>
+                                {{comment}}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            ShowCart();
+        </script>
+    </body>
+</html>

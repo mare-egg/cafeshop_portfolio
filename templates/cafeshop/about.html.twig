@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <title>About</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link href="{{constant('cafeshop\\Bootstrap::APP_URL')}}css/about.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <a class="mypage" href="{{'http://localhost/SC/cafeshop/Mypage.php'}}">MYPAGE</a>
+    <a class="confirm" href="{{'http://localhost/SC/cafeshop/contact/index.php'}}">お問い合わせ</a>
+    <a class="back" href="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}list.php">HOME</a>
+  </header>
+  <main>
+    <div class="container">
+      <div class="icon">
+        <img src="images/cafeshop.jpg" alt="店内雰囲気">
+        <p class="absolute">Roa Caferia</p>
+      </div>
+      <div class="info">
+        <h1>ABOUT</h1>
+        <h2>ROA CAFERIA online store</h2>
+        <p>Thank you for sharing on SNS</p>
+        <ul>
+          <li>
+            <a href="http://twitter.com/share?text={{share_title}}&url={{share_url}}&via={{twitter}}" class="fab fa-twitter" title="Twitterでシェア"></a>
+          </li>
+          <li>
+            <a href="http://www.facebook.com/sharer.php?src=bm&u={{share_url}}&t={{share_title}}" class="fab fa-facebook" title="Facebookでシェア"></a>
+          </li>
+          <li>
+            <a href="http://plus.google.com/share?url={{share_url}}" class="far fa-share-square" title="Google+で共有"></a>
+          </li>
+          <li>
+            <a href="http://line.me/R/msg/text/?={{share_title}}.'%0A'.{{share_url}}" class="fab fa-line" title="LINEに送る"></a>
+          </li>
+        </ul>
+        <p>official online shop</p>
+        <p class="fas fa-map-marker-alt">Adress,City,Contry</p><br>
+        <p class="fas fa-clock">Mon - Fri 8:00 AM to 5:00 PM</p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

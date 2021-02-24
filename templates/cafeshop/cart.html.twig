@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="{{constant('cafeshop\\Bootstrap::APP_URL')}}js/cart.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple|anaglyph">
+        <link href="{{constant('cafeshop\\Bootstrap::APP_URL')}}css/cart.css" rel="stylesheet">
+    </head>
+    <body>
+    <input type="hidden" name="entry_url" value="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}" id="entry_url">
+        <div id="wrapper">
+            <header>
+                <div class="font-effect-anaglyph">shopping my cart</div>
+                <p><a class="home" href="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}list.php">HOMEへ戻る</a></p>
+                {% if dataArr is not empty %}{% include 'order.html.twig' %}{% endif %}
+                <p class="text">カート内商品数：{% if sumNum is not empty %}{{sumNum}}{% else %}0{% endif %}個  合計金額：&yen;{{sumPrice|number_format(0,'.',',')}}</p>
+            </header>
+            <div id="cart_list">
+                {% if dataArr | length == 0 %}
+                    <p>カートに商品は入っていません</p>
+                {% else %}
+                    {% for value in dataArr %}
+                        <div class="item">
+                            <ul>
+                                <li class="image"><img class="img" src="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}images/{{value.image}}" alt="{{value.item_name}}"></li>
+                                <li class="name">{{value.item_name}}</li>
+                                <li class="price">&yen;{{value.price|number_format(0,'.',',')}}</li>
+                                <li class="num">数量：{{value.num}}個</li>
+                                {# <li class="num"><input type="button" name="update" value="更新" id="update">数量<input type="number" name="nam_id" id="num_id" min=1 max={{value.stock}} value="{{value.num}}" required>個</li> #}
+                                <li class="sumprice">合計小計：&yen;{{value.singlePrice|number_format(0,'.',',')}}</li>
+                                <li class="del"><a href="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}cart.php?crt_id={{value.crt_id}}">削除</a></li>
+                                <input type="hidden" name="item_id" id="item_id" value="{{value.item_id}}">
+                            </ul>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </body>
+</html>

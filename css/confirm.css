@@ -1,0 +1,91 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body
+{
+  min-height: 100vh;
+  background: url(../cafeshop/images/contact.jpg) no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.confirm-form
+{
+  max-width: 700px;
+  margin-right: 50px;
+}
+
+.confirm-form
+{
+  flex: 1;
+}
+
+.confirm-form table tr th
+{
+  color: rgb(0, 0, 0); 
+  padding-bottom: 30px;
+  font-size: 20px;
+}
+
+.confirm-form table tr td
+{
+  color:black;
+  font-weight: bold;
+  font-size: 18px;
+  padding-left: 25px;
+}
+
+.confirm-form table
+{
+  padding: 0.5em;
+  color: rgb(255, 255, 255);
+  background:rgba(255, 255, 255, 0.3);
+  border-left: solid 5px #ffae5833;
+}
+
+.pos
+{
+  color: rgb(0, 0, 0);
+  border: none;
+  border:solid gray 1px;
+  width: 120px;
+  height: 35px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  margin-left: 90px;
+  margin-top: 10px;
+}
+
+@media screen and (max-width:950px)
+{
+  .confirm-section 
+  {
+    flex-direction: column;
+  }
+
+  .confirm-form 
+  {
+    margin: 30px 50px;
+  }
+
+  .confirm-form h2 
+  {
+    font-size: 30px;
+  }
+
+  .confirm-form .text-box 
+  {
+    width: 100%;
+  }
+}

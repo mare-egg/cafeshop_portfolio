@@ -1,0 +1,141 @@
+header
+{
+  margin:0;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 19px;
+  text-align: center;
+  width: 100%;
+  border-bottom: solid 5px #0d1a114b;
+}
+
+header div.font-effect-anaglyph
+{
+  font-family:'Chrome, Firefox, Opera, Safari' ;
+  color: black;
+  font-size: 35px;
+  font-weight: bolder;
+}
+
+.send-btn
+{
+  color: rgb(0, 0, 0);
+  border: none;
+  border:solid gray 1px;
+  width: 120px;
+  height: 35px;
+  margin-right: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-bottom: 30px;
+}
+
+p.text
+{
+  font-size: 16px;
+}
+
+body
+{
+  background: url(../cafeshop/images/detail.jpg) no-repeat;
+  background-size: cover;
+  width: 100vw;
+  z-index: -1;
+  font-family: Verdana, sans-serif;
+  margin: 0;
+}
+
+.img
+{
+  width: 170px;
+  height: 100px;
+}
+
+div#wrapper
+{
+  display: flex;
+  flex-direction: column;
+}
+
+div#cart_list
+{
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+div#cart_list p
+{
+  text-decoration: none;
+  color:black;
+  text-align: center;
+  font-size: 20px;
+}
+
+div.item
+{
+  background:rgba(255, 255, 255, 0.4);
+  width: 50vh;
+  margin-bottom: 10px;
+}
+
+div.item ul
+{
+  list-style-type:none;
+  margin: 0;
+  text-align: center;
+  padding: 0.5em 0;
+  border-bottom: solid 3px #0d1a114b;
+}
+
+div#cart_member
+{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+div#cart_member table tr th
+{
+  color: black; 
+  padding: 10px;
+  font-size: 20px;
+}
+
+div#cart_member table tr td
+{
+  color:black;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px;
+}
+
+div#cart_member table
+{
+  padding: 0.5em;
+  color: black;
+  background:rgba(255, 255, 255, 0.4);
+  margin: 0;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width:950px)
+{
+  div#cart_member-section
+  {
+    flex-direction: column;
+  }
+  
+  div#cart_member
+  {
+    margin: 30px 50px;
+    margin: 0;
+  }
+ 
+}

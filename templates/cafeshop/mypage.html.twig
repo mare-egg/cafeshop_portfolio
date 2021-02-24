@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="{{constant('cafeshop\\Bootstrap::APP_URL')}}js/common.js"></script>
+  <script src="{{constant('cafeshop\\Bootstrap::APP_URL')}}js/mypage.js"></script>
+  <link href="{{constant('cafeshop\\Bootstrap::APP_URL')}}css/style.css" rel="stylesheet">
+  <link href="{{constant('cafeshop\\Bootstrap::APP_URL')}}css/mypage.css" rel="stylesheet">
+  <title>Mypage</title>
+</head>
+  <body>
+    <header>
+      <h1>MYPAGE</h1>
+      <a class="home" href="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}list.php">HOME</a>
+    </header>
+    <input type="hidden" name="entry_url" id="entry_url" value="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}">
+      <main>
+        <div class="mypage-form">
+        <form method="POST" action="">
+          {% for dataArr in mypageArr %}
+          <p class="username">{{username}}さんの会員情報</p>
+            <table>
+                <tr>
+                    <th>氏名</th>
+                    <td>
+                      <input type="text" name="family_name" class="text-name" value={{dataArr.family_name}}>
+                      <input type="text" name="first_name" class="text-name" value={{dataArr.first_name}}>
+                      {% if errArr.family_name | length > 0 %}<br><span class="red">{{ errArr.family_name }}</span>{% endif %}
+                      {% if errArr.first_name | length > 0 %}<br><span class="red">{{ errArr.first_name }}</span>{% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>氏名かな</th>
+                    <td>
+                      <input type="text" name="family_name_kana" class="text-name" value={{dataArr.family_name_kana}}>
+                      <input type="text" name="first_name_kana" class="text-name" value={{dataArr.first_name_kana}}>
+                      {% if errArr.family_name_kana | length > 0 %}<br><span class="red">{{ errArr.family_name_kana }}</span>{% endif %}
+                      {% if errArr.first_name_kana | length > 0 %}<br><span class="red">{{ errArr.first_name_kana }}</span>{% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>ユーザー名</th>
+                    <td>
+                      <input type="text" name="user_name" class="text-name" value={{dataArr.user_name}}>
+                      {% if errArr.user_name | length > 0 %}<br><span class="red">{{ errArr.user_name }}</span>{% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>性別</th>
+                    <td>
+                        {# {% if dataArr.sex == '1' %}男性{% elseif dataArr.sex == '2' %}女性{% endif %} #}
+                        {% for index, label in sexArr %}
+                          <input type="radio" name="sex" value="{{index}}" id="sex_{{index}}" {% if dataArr.sex == index %} checked="checked" {% endif %}>
+                          <label for="sex_{{index}}">{{label}}</label>
+                        {% endfor %}
+                        {% if errArr.sex | length > 0 %}<br><span class="red">{{errArr.sex}}</span>{% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>生年月日</th>
+                    <td>
+                      {# {{dataArr.year}}年 {{dataArr.month}}月 {{dataArr.day}}日 #}
+                      <select name="year" >
+                            {% for index, label in yearArr %}
+                                <option value="{{index}}" {% if dataArr.year == index %} selected {% endif %}>{{ label }}</option>
+                            {% endfor %}
+                        </select>
+                        <select name='month'>
+                            {% for index, label in monthArr %}
+                                <option value="{{index}}" {% if dataArr.month == index %} selected {% endif %}>{{ label }}</option>
+                            {% endfor %}
+                        </select>
+                        <select name='day'>
+                            {% for index, label in dayArr %}
+                                <option value="{{index}}" {% if dataArr.day == index %} selected {% endif %}>{{ label }}</option>
+                            {% endfor %}
+                        </select>
+                        {% if errArr.year | length > 0 %}<br><span class="red">{{errArr.year}}</span>{% endif %}
+                        {% if errArr.month | length > 0 %}<br><span class="red">{{errArr.month}}</span>{% endif %}
+                        {% if errArr.day | length > 0 %}<br><span class="red">{{errArr.day}}</span>{% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>郵便番号</th>
+                    <td>
+                      {# {{dataArr.zip1}} - {{dataArr.zip2}} #}
+                      <input type="text" name="zip1" class="text" value="{{dataArr.zip1}}" id="zip1" size="3" maxlength="3"> - 
+                      <input type="text" name="zip2" class="text" value="{{dataArr.zip2}}" id="zip2" size="4" maxlength="4">
+                      <input type="button" name="address_search" value="〒から住所を入力" id="address_search">
+                      {% if errArr.zip1 | length > 0 %}<br><span class="red">{{errArr.zip1}}</span>{% endif %}
+                      {% if errArr.zip2 | length > 0 %}<br><span class="red">{{errArr.zip2}}</span>{% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>住所</th>
+                    <td>
+                      <input type="text" name="address"class="text-box"  value={{dataArr.address}} id="address">
+                      {% if errArr.address | length > 0 %}<br><span class="red">{{errArr.address}}</span>{% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>メール</th>
+                    <td>
+                      <input type="text" name="email" class="text-box" value={{dataArr.email}}>
+                      {% if errArr.email | length > 0 %}<br><span class="red">{{errArr.email}}</span>{% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>電話番号</th>
+                    <td>
+                      <input type="text" name="tel1" class="text-call" value={{dataArr.tel1}}> - <input type="text" name="tel2" class="text-call" value={{dataArr.tel2}}> - <input type="text" name="tel3" class="text-call" value={{dataArr.tel3}}>
+                      {% if errArr.tel1 | length > 0 %}<br><span class="red">{{errArr.tel1}}</span>{% endif %}
+                      {% if errArr.tel2 | length > 0 %}<br><span class="red">{{errArr.tel2}}</span>{% endif %}
+                      {% if errArr.tel3 | length > 0 %}<br><span class="red">{{errArr.tel3}}</span>{% endif %}
+                    </td>
+                </tr>
+            </table>
+          {% endfor %}
+          <div class="push">
+              <input type="submit" name="confirm" class="post" value="更新確認">
+              <input type="button" name="withdrawal" class="post" value="退会" id="withdrawal">
+          </div>
+        </form>
+        </div>
+        <div class="box">
+          <p class="history">購入履歴</p>
+          {% if purchasedata != false %}
+            {% for purchase in purchasedata %}
+              <div class="data">
+                {{purchase.date}}<br>
+                <a href="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}detail.php?item_id={{purchase.item_id}}">{{purchase.item_name}}</a><span>{{purchase.sumnum}}個</span><span>&yen;{{purchase.sumprice}}</span>
+                <hr>
+              </div>
+            {% endfor %}
+          {% elseif purchasedata == false %}
+            <div class="data">
+              <p>{{comment}}</p>
+            </div>
+          {% endif %}
+        </div>
+      </main>
+  </body>
+</html>

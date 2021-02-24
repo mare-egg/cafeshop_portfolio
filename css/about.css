@@ -1,0 +1,141 @@
+header
+{
+  margin:0;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 19px;
+  text-align: center;
+}
+
+header .mypage
+{
+  margin-right:30px;
+  text-decoration: none;
+  color:black;
+  background-color:rgb(111, 199, 1,0.5);
+}
+
+header .confirm
+{
+  margin-right:30px;
+  text-decoration: none;
+  color:black;
+  background-color:rgb(111, 199, 1,0.5);
+}
+
+header .back
+{
+  color:black;
+  text-decoration: none;
+  background-color:rgb(111, 199, 1,0.5);
+}
+
+html
+{
+  background-color: rgba(63, 109, 91, 0.575);
+}
+
+body
+{
+  font-family: Verdana, sans-serif;
+  margin: 0;
+}
+
+main
+{
+  background: url(../cafeshop/images/about.jpg) no-repeat;
+  background-size: cover;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.container
+{
+  background-color: rgba(99, 173, 145, 0.452);
+  width: 740px;
+  height: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+
+.info
+{
+  margin-left: 60px;
+}
+
+.icon img
+{
+  width: 160px;
+  height: 160px;
+  margin-left: 15px;
+  border-radius: 50%;
+  border-width: 4px;
+  border-style: solid;
+  border-color: #efef;
+}
+
+.info h1
+{
+  font-size: 26px;
+  margin: 0;
+  text-align: center;
+  width: 80%;
+  margin-bottom: 60px;
+  border-width: 4px;
+  border-style: dashed solid;
+  border-color: #efef;
+}
+
+.info h2
+{
+  font-size: 24px;
+  margin:0;
+  margin-bottom: 16px;
+}
+
+.info p
+{
+  font-size: 16px;
+  margin: 0;
+  margin-bottom: 16px;
+}
+
+.info ul
+{
+  margin: 0;
+  padding: 0;
+  list-style-type:none ; 
+  display: flex;
+}
+
+.info ul li
+{
+  width:20px;
+  height:20px;
+  margin-right: 22px;
+  padding-bottom: 100px;
+}
+
+.fab,
+.far
+{
+  font-size: 25px;
+}
+
+.icon
+{
+  position: relative;
+}
+
+.container .icon .absolute
+{
+  position: absolute;
+  left: 40px;
+  top: 23px;
+  font-family: 'Kosugi', sans-serif;
+  font-size: 20px;
+  color:rgb(121, 218, 4);
+  text-align: center;
+}

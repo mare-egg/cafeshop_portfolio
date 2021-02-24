@@ -1,0 +1,57 @@
+ul.paging
+{
+  list-style-type: none;
+  margin: auto;
+  padding: 0;
+
+  /* 中央寄せ */
+  display: table;
+
+  /* 左寄せ */
+  /* display: block; */
+
+  /* 右寄せ */
+  /* display: table; */
+  /* margin: 0 0 0 auto; */
+}
+
+ul.paging::after
+{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+ul.paging > li
+{
+  float: left;
+}
+
+ul.paging > li > * 
+{
+  margin: 2px;
+  padding: 3px 0;
+  margin-right:10px;
+  display: block;
+  color: #000;
+  text-decoration: none;
+}
+
+ul.paging > li > a,
+ul.paging > li > .active,
+ul.paging > li > [data-page]
+{
+  padding: 3px 10px;
+  border: 2px solid rgb(160, 214, 189);
+  border-radius: 5px;
+}
+
+ul.paging > li > .active
+{
+  background-color: rgba(48, 187, 141, 0.479);
+}
+
+ul.paging > li > [data-page]
+{
+  cursor: pointer;
+}

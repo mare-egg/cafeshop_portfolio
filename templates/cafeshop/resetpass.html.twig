@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>RESET PASSWORD FORM</title>
+  <link href="{{constant('cafeshop\\Bootstrap::APP_URL')}}css/resetpass.css" rel="stylesheet">
+  <link href="{{constant('cafeshop\\Bootstrap::APP_URL')}}css/style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="center">
+    <h1>パスワード再設定</h1>
+    <form action="" method="POST">
+      <div>{% if message is not empty %} {{message}} {% endif %}</div>
+      <div class="txt_field">
+          <input type="mail" name="mail" placeholder="メールアドレスを入力" value="">
+      </div>
+      <div class="errmessage"><span class="red">{% if error is not empty %} {{error}} {% endif %}</span></div>
+      <input type="submit" value="送信">
+      <ul>
+        <li><a href="Login.php">ログイン画面に戻る</a></li>
+      </ul>
+    </form>
+  </div>
+</body>
+</html>
