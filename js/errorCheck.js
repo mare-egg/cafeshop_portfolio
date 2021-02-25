@@ -47,4 +47,3 @@ $(function(){
     $("select").css('background-color','');
   }
 });
-//Database.class.phpはnamespaceの部分だけを変更して同様のもの使用

@@ -18,10 +18,7 @@ class Reset
   public function resetMailCheck($mail)
   {
     $res = false;
-    // $reg_str = "/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/";
-    // if(preg_match($reg_str,$mail)) {
-    //   $res = true;
-    // }
+    //"/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/";
 
     //メールのバリデーションはfilter_varの方が確実のため採用
     if( filter_var( $mail, FILTER_VALIDATE_EMAIL ) ){
@@ -47,8 +44,8 @@ class Reset
   }
 
   
-  //ランダムトークンと現在日時＋24時間した日時を
-  //passresetテーブル(DB)に登録する
+  //ランダムトークンと現在日時＋30分した日時を
+  //passresetテーブルに登録する
   public function insertreset($token,$date,$mem_id)
   {
     $table = ' passreset ';
@@ -74,7 +71,6 @@ class Reset
   //mem_idが一致する会員情報のパスワードをアップデートする
   public function updatepassword($password,$mem_id,$date)
   {
-    // UPDATE member SET delete_flg =? WHERE mem_id = ?
     $table = ' member ';
     $password = password_hash($password, PASSWORD_DEFAULT); 
     $insData = [
@@ -87,7 +83,7 @@ class Reset
     return $this->db->update($table,$insData,$where,$arrWhereVal);
   }
 
-  //24時間の有効期限が過ぎている無効URLの場合に削除処理
+  //有効リミットが過ぎている無効URLの場合に削除処理
   public function deleterestpass($reset_id)
   {
     $table = ' passreset ';
