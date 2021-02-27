@@ -6,6 +6,7 @@
         <title>会員登録確認</title>
     </head>
     <body>
+        {% include 'fade.html.twig' %}
         <form method="post" action="confirm.php">
         <div class="confirm-form">
             <table>
@@ -43,10 +44,6 @@
                     <th>住所</th>
                     <td>{{dataArr.address}}</td>
                 </tr>
-                {# <tr>
-                    <th>番地以降</th>
-                    <td>{{dataArr.address}}</td>
-                </tr> #}
                 <tr>
                     <th>メールアドレス</th>
                     <td>{{dataArr.email}}</td>

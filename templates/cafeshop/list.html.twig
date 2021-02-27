@@ -25,7 +25,7 @@
             <p>こんにちわ{{username}}さん</p>
         </div>
         <ul id="nav">
-            <li><a href="{{'http://localhost/SC/cafeshop/Mypage.php'}}">MYPAGE</a></li>
+            <li><a href="{{'http://localhost/SC/cafeshop/mypage.php'}}">MYPAGE</a></li>
             <li><a href="{{'http://localhost/SC/cafeshop/Logout.php'}}">LOGOUT</a></li>
             <li><a href="{{'http://localhost/SC/cafeshop/cart.php'}}">カート</a></li>
             <li><a href="{{'http://localhost/SC/cafeshop/contact/index.php'}}">お問い合わせ</a></li>
@@ -34,6 +34,7 @@
     </header>
     <hr>
     <body>
+        {# {% include 'loading.html.twig' %} #}
       <div id="search">
         <form action="" class="search_container" method="GET">
             <input type="text" name="title" value="{{title}}" placeholder="キーワード検索">
@@ -90,7 +91,6 @@
             {% endif %}
         {% endfor %}
         </ul>
-
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="{{constant('cafeshop\\Bootstrap::APP_URL')}}js/slick.min.js"></script>
         <script src="{{constant('cafeshop\\Bootstrap::APP_URL')}}js/main.js"></script>

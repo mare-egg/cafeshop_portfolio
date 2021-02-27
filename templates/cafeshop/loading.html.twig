@@ -1,0 +1,25 @@
+<head>
+    <div class="loading homeview">
+        <img src="images/coffee.gif" alt="loading">
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+  <script>
+    $(window).on('load',function () {
+    //ローディングが10秒以内で終わる場合、読み込み完了後ローディング非表示
+      endLoading();
+    });
+    //10秒経過後に上記の処理を上書きし、終了させる
+    $(function(){
+      setTimeout('endLoading()', 10000);
+    });
+    //非表示処理
+    function endLoading(){
+    //1秒かけて非表示、その後0.8秒かけて背景を非表示
+      $('.homeview img').fadeOut(1000, function(){
+          $('.homeview').fadeOut(800);
+      });
+    } 
+  </script>
+</body>

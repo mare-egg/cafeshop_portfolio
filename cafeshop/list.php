@@ -84,9 +84,6 @@ if(!isset($_GET['page_id'])){
   $now = $_GET['page_id'];
 }
 
-//商品リストを取得する(旧)
-// $dataArr = $itm->getItemdata($ctg_id);
-
 //ページごと、カテゴリーごとに対応して商品リストを取得する
 $dataArr = $itm->getItemList($ctg_id,$max_view,$now);
 

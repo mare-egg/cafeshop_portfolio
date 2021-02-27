@@ -1,0 +1,14 @@
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        jQuery(function($){
+            $('body').fadeIn(1000);
+            $(window).on("beforeunload",function(e){
+                $('body').fadeOut();
+            });
+        });
+    </script>
+</head>
+<body>
+    <script>document.body.style.display = 'none';</script>
+</body>

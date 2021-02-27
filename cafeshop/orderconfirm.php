@@ -31,6 +31,8 @@ $crt_id = (isset($_GET['crt_id']) === true && preg_match('/^\d+$/',$_GET['crt_id
 if($crt_id !== '') {
   $res = $cart->delCartData($crt_id);
 }
+
+//会員情報を取得し、確認させる情報を取得する
 if(isset($_SESSION['mem_id'])) {
   $mem_id = $_SESSION['mem_id'];
   $memberdata = $mypage->selectConfirmCart($mem_id);
@@ -39,6 +41,7 @@ if(isset($_SESSION['mem_id'])) {
 
 $dataArr = $cart->getCartData($customer_no);
 
+//商品の合計金額・数を取得する
 list($sumNum,$sumPrice) = $cart->getItemAndSumPrice($customer_no);
 
 $context['sumNum'] = $sumNum;

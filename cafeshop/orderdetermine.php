@@ -1,11 +1,6 @@
 <?php
 /**
- * 確定
- * ・在庫のUPDATE
- * ・注文確定TABLEにINSERT
- * ・確定後にカート内をDELETE
- * ・（確定確認メール）
- * 
+ * 注文確定
  * アクセスURL:http://localhost/SC/cafeshop/orderdetermine.php
  */
 namespace cafeshop;

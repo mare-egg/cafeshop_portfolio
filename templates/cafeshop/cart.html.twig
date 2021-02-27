@@ -27,7 +27,6 @@
                                 <li class="name">{{value.item_name}}</li>
                                 <li class="price">&yen;{{value.price|number_format(0,'.',',')}}</li>
                                 <li class="num">数量：{{value.num}}個</li>
-                                {# <li class="num"><input type="button" name="update" value="更新" id="update">数量<input type="number" name="nam_id" id="num_id" min=1 max={{value.stock}} value="{{value.num}}" required>個</li> #}
                                 <li class="sumprice">合計小計：&yen;{{value.singlePrice|number_format(0,'.',',')}}</li>
                                 <li class="del"><a href="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}cart.php?crt_id={{value.crt_id}}">削除</a></li>
                                 <input type="hidden" name="item_id" id="item_id" value="{{value.item_id}}">

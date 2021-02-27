@@ -36,7 +36,6 @@ if(isset($_GET['zip1']) === true && isset($_GET['zip2']) === true) {
 
   //郵便番号0000とすると”以下に掲載がない場合”と表示されるため
   //条件に特定の文字を含まない場合のみtrueとする
-  //strops()か、preg_matchを使用
   if($res !== false ) {
     $string = $res[0]['town'];
     $find = '/以下に掲載がない場合/';

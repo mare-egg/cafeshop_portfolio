@@ -88,11 +88,11 @@ $context = [];
 //商品IDごとの口コミレビューを取得
 $reviews_data = $review->selectreview($item_id);
 
-//口コミデータがある場合
+//口コミレビューがある場合
 if(!empty($reviews_data)) {
   $context['reviews_data'] = $reviews_data;
 } else {
-  //ない場合
+  //口コミレビューがない場合
   $comment = 'まだ商品に関する口コミはありません';
   $context['comment'] = $comment;
 }

@@ -229,3 +229,23 @@ hr
   background: rgba(13, 26, 17, 0.295);
   border: none;
 }
+
+.loading
+{
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.loading img
+{
+  width: 100px;
+  z-index: 10;
+}

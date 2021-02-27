@@ -8,6 +8,7 @@
         <link href="{{constant('cafeshop\\Bootstrap::APP_URL')}}css/detail.css" rel="stylesheet">
     </head>
     <body>
+        {% include 'fade.html.twig' %}
         <input type="hidden" name="entry_url" value="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}" id="entry_url">
         <div id="wrapper">
             {% include 'category_menu.html.twig' %}

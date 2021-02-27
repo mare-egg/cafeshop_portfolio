@@ -7,8 +7,9 @@
   <link href="{{constant('cafeshop\\Bootstrap::APP_URL')}}css/about.css" rel="stylesheet">
 </head>
 <body>
+  {% include 'fade.html.twig' %}
   <header>
-    <a class="mypage" href="{{'http://localhost/SC/cafeshop/Mypage.php'}}">MYPAGE</a>
+    <a class="mypage" href="{{'http://localhost/SC/cafeshop/mypage.php'}}">MYPAGE</a>
     <a class="confirm" href="{{'http://localhost/SC/cafeshop/contact/index.php'}}">お問い合わせ</a>
     <a class="back" href="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}list.php">HOME</a>
   </header>
