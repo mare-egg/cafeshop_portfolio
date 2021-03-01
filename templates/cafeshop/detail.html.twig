@@ -22,12 +22,19 @@
                             <dd class="itemname">{{itemData.item_name}}</dd>
                             <dd class="price">&yen;{{itemData.price|number_format(0,'.',',')}}</dd>
                             <div id="cart">
-                                {% if itemData.stock == '0' %}
+                                {# 在庫がない場合はカート機能を使わない為、ShowCart();は使わない #}
+                                {% if itemData.stock == "0" %}
                                     <span>{{soldout}}</span>
                                 {% elseif itemData.stock < 6 %}
                                     {% include 'cartin.html.twig' %}<span>{{little}}</span>
+                                    <script>
+                                        ShowCart();
+                                    </script>
                                 {% else %}
                                     {% include 'cartin.html.twig' %}
+                                    <script>
+                                        ShowCart();
+                                    </script>
                                 {% endif %}
                             </div>
                             {% if itemData.stock != '0' %}
@@ -83,8 +90,5 @@
                 </div>
             </div>
         </div>
-        <script>
-            ShowCart();
-        </script>
     </body>
 </html>

@@ -63,8 +63,8 @@ body
   text-transform: uppercase;
   letter-spacing: 2px;
   border-radius: 5px;
-  margin-left: 90px;
-  margin-top: 10px;
+  margin-left: 55px;
+  margin-top: 20px;
 }
 
 @media screen and (max-width:950px)

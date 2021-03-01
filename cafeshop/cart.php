@@ -98,9 +98,14 @@ if($item_id !== '') {
 //crt_idが設定されていれば、削除する
 if($crt_id !== '') {
   $data = $cart->delCartData($crt_id);
+  header("Location:http://localhost/SC/cafeshop/cart.php");
   // unset($_GET['crt_id']);
 }
 
+/**
+ * カートを削除後cartへいくことでスムーズになる
+ * ブラウザバックした時、画面が白くなる
+ */
 //カート情報を取得する
 $dataArr = $cart->getCartData($customer_no);
 

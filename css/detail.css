@@ -39,11 +39,20 @@ div.image
   align-items: center;
 }
 
+/* 画像サイズ設定・画像周りの色 */
 div.image .img
 {
   width: 300px;
-  height: 200px;
+  height: 220px;
+  border: 10px solid rgba(200, 28, 28, 0.2);
   margin-left: 30px;
+}
+
+div#itemlist .item ul
+{
+  padding:0;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 div.detail
@@ -73,14 +82,16 @@ input[type="number"]
   font-size: large;
 }
 
-.itemname
+dd.itemname
 {
   position: relative;
   padding-bottom: 5px;
   margin-bottom: 15px;
   font-size: 23px;
+  color: rgb(124, 88, 88)
 }
 
+/* 商品名の下線 */
 .itemname:after
 {
   position: absolute;
@@ -93,6 +104,7 @@ input[type="number"]
   background: repeating-linear-gradient(45deg,#fff,#fff 2px, #000 2px, #000 4px);
 }
 
+/* 価格表示 */
 .price
 {
   margin-bottom: 15px;
@@ -118,7 +130,6 @@ input[type="button"]
 div#cart input[type="button"]
 {
   float: left;
-
 }
 
 .reviews
@@ -183,8 +194,10 @@ div.reviews
   align-items: center;
 }
 
+/* リセットボタン・クチコミ投稿ボタン */
 .post
 {
+  cursor: pointer;
   color: rgb(0, 0, 0);
   border: none;
   border:solid gray 1px;
@@ -198,6 +211,7 @@ div.reviews
   border-radius: 5px;
 }
 
+/* ホーム画面へ戻るボタン */
 .back
 {
   text-decoration:none; 
@@ -212,17 +226,21 @@ div.reviews
   border-radius: 5px;
 }
 
+/* 口コミレビューの投稿内容 */
 .comment
 {
   text-align: center;
   margin-bottom: 15px;
   position: relative;
-  background: #ffffffcb;
-  box-shadow: 0px 0px 0px 4px #ffffffcb;
+  background: #fff0cd;
+  box-shadow: 0px 0px 0px 5px #fff0cd;
+  border: dashed 2px white;
   padding: 0.2em 0.5em;
+  color: #454545;
   max-width: 800px;
 }
 
+/* 投稿後 */
 .comment:after
 {
   position: absolute;
@@ -230,8 +248,6 @@ div.reviews
   right: -7px;
   top: -7px;
   border-width: 0 15px 15px 0;
-  border-style: solid;
-  border-color: #ffffffa4 #c5d3c5c9 #be2a2aa4;
   box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
 }
 

@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="{{constant('cafeshop\\Bootstrap::APP_URL')}}js/cart.js"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple|anaglyph">
         <link href="{{constant('cafeshop\\Bootstrap::APP_URL')}}css/orderconfirm.css" rel="stylesheet">
     </head>
     <body>
+    {% include 'fade.html.twig' %}
     <input type="hidden" name="entry_url" value="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}" id="entry_url">
         <div id="wrapper">
             <header>
@@ -74,10 +74,8 @@
                 <p class="text">以上の内容でよろしいでしょうか？</p>
                 <p class="text">よろしければ下記からお進み下さい</p>
                 <form method="post" action="orderdetermine.php">
-                <div>
-                    <input type="button" name="back" class="send-btn" value="戻る" onclick="history.back(); return false;">
+                    <a class="back" href="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}cart.php">戻る</a>
                     <input type="submit" name="confirm" class="send-btn" value="確定">
-                </div>
                 </form>
             </div>
         </div>

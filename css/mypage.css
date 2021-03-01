@@ -76,17 +76,18 @@ table
 
 .post
 {
-color: rgb(0, 0, 0);
-border: none;
-border:solid gray 1px;
-width: 120px;
-height: 35px;
-font-size: 15px;
-font-weight: 600;
-text-transform: uppercase;
-letter-spacing: 2px;
-border-radius: 5px;
-margin-left: 80px;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  border: none;
+  border:solid gray 1px;
+  width: 120px;
+  height: 35px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  margin-left: 80px;
 }
 
 .mypage-form .text-box

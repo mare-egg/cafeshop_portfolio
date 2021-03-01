@@ -47,21 +47,30 @@ DB設計に使用したSQLは下記に記載しています。
 - 会員登録画面は以下。
 郵便番号による住所の自動入力にajax使用しています。
 登録確認後、確定を押すことで会員登録完了です。
-
-<img width="600" alt="新規会員登録画面" src="https://user-images.githubusercontent.com/79457633/109071244-cd39f900-7736-11eb-89aa-6b3d82c0db49.png">
+<div align="center">
+  <img width="600" alt="新規会員登録画面" src="https://user-images.githubusercontent.com/79457633/109071244-cd39f900-7736-11eb-89aa-6b3d82c0db49.png">
+</div>
 
 - ログイン後に以下のホーム画面が表示がされます。「コーヒー」と検索後、検索窓の下にヒットした件数と、検索対象が表示されています。
 
+<div align="center">
+
 ![list](https://user-images.githubusercontent.com/79457633/109137153-3bfd6d80-779c-11eb-8390-7ed4b8b688ae.gif)
+</div>
 
 - 以下はパスワード再設定する際に受診するメール内容です。
 会員登録時に入力したメールアドレスが、退会後でなければ再設定用URLが送信されます。30分過ぎたURLは無効となります。
+<div align="center">
+
 ![mailtest](https://user-images.githubusercontent.com/79457633/109137235-4fa8d400-779c-11eb-9dbc-59feda248665.gif)
+</div>
 
 - 在庫変化による商品ページは以下。
 在庫数が6より下回ると「残りわずかです」。在庫数が0になると「売り切れ」表示し、カート内に入れることを規制します。カート内に商品が含まれている場合にはアイテム数を表示させています。
-![detail2](https://user-images.githubusercontent.com/79457633/109148920-36a71f80-77aa-11eb-854d-3d293747b1c0.gif)
+<div align="center">
 
+![detail2](https://user-images.githubusercontent.com/79457633/109148920-36a71f80-77aa-11eb-854d-3d293747b1c0.gif)
+</div>
 
 ## Usage
 

@@ -140,7 +140,8 @@
             </table>
             <div>
                 <input type="submit" name="confirm" class="post" value="登録確認">
-                <input type="button" name="back" class="postback" value="戻る" onclick="history.back(); return false;">
+                <a class="back" href="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}login.php">戻る</a>
+                {# <input type="button" name="back" class="postback" value="戻る" onclick="history.back(); return false;"> #}
             </div>
         </div>
         </form>

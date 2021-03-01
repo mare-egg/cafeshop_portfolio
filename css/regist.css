@@ -136,6 +136,7 @@ body
   opacity: 0.9;
 }
 
+/* 登録確認ボタン */
 .post
 {
   color: rgb(0, 0, 0);
@@ -151,21 +152,24 @@ body
   margin-left: 180px;
 }
 
-.postback
+.back
 {
+  text-decoration:none; 
   color: rgb(0, 0, 0);
-  border: none;
   border:solid gray 1px;
-  width: 120px;
-  height: 35px;
-  font-size: 15px;
+  background-color: rgb(231, 231, 231);
+  font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  padding: 5px;
+  margin-left: 60px;
+  letter-spacing: 4px;
   border-radius: 5px;
-  margin-left: 80px;
+  display: inline-block;
+  width: 120px;
+  height: 35px;
+  text-align: center;
 }
-
 
 @media screen and (max-width:950px)
 {

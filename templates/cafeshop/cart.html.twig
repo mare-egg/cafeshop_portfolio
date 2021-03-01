@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="{{constant('cafeshop\\Bootstrap::APP_URL')}}js/cart.js"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple|anaglyph">
         <link href="{{constant('cafeshop\\Bootstrap::APP_URL')}}css/cart.css" rel="stylesheet">
     </head>
     <body>
+    {% include 'fade.html.twig' %}
     <input type="hidden" name="entry_url" value="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}" id="entry_url">
         <div id="wrapper">
             <header>

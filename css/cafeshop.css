@@ -8,74 +8,53 @@ li
   list-style-type:none;
 }
 
-div#wrapper
+div.item ul
 {
+  overflow:hidden;
+  height:auto;
+}
+
+li.name a
+{
+  font-size:18px;
+  color: rgb(124, 88, 88);
+  text-decoration: none;
+}
+
+li.name a:hover
+{
+  text-decoration: underline;
+  opacity: 0.7;
+  color: white;
+}
+
+li.price
+{
+  color:black;
+  font-size: 20px;
+  font-family: 'Comic Sans MS';
+  margin-bottom: 5px;
+}
+
+li.detail
+{
+  margin-top: 10px;
   text-align:center;
-  width:470px;
-  position: relative;
 }
 
-div#wrapper div#category
+li.detail a
 {
-  float:left;
-  width:120px;
-  text-align:left;
+  font-size: 18px;
+  /* font-weight:bold; */
+  color:rgba(0, 0, 0, 0.8);
+  text-decoration: none;
 }
 
-div#wrapper div#item_list,
-div#wrapper div#item_detail
+li.detail a:hover
 {
-  width:400px;
-  text-align:left;
-  float:right;
-}
-
-div#wrapper div#item_list div.item ul
-{
-  overflow:hidden;
-  height:auto;
-}
-
-div#wrapper div#item_list div.item .name
-{
-  font-size:16px;
-  font-weight:bold;
-}
-
-div#wrapper div#item_list div.item .num
-{
-  font-size:16px;
-  font-weight:bold;
-}
-
-div#wrapper div#item_list div.item .price
-{
-  color:#900;
-}
-
-div#wrapper div#item_list div.item ul li.detail
-{
-  text-align:right;
-  font-weight:bold;
-  vertical-align:bottom;
-}
-
-div#wrapper div#item_list div.item .image
-{
-  padding:0 4px;
-  text-align:left;
-}
-
-div#wrapper div#cart_list div.item
-{
-  text-align:right;
-  overflow:hidden;
-  height:auto;
-}
-
-div#wrapper div#cart_list div.item.image
-{
-  float:left;
+  text-decoration: underline;
+  opacity: 0.7;
+  color: white;
 }
 
 .red
@@ -158,6 +137,25 @@ div#itemlist .item
   margin:auto;
 }
 
+/* 商品画像（サイズ感を合わせる為、画像サイズ高さ＋20px） */
+li.image 
+{
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3), 0 2px 5px 0 rgba(0,0,0,0.3);
+  transition: .3s;
+  width: 290px;
+  height: 210px;
+  cursor: pointer;
+}
+
+/* 商品ホバー時、浮かせる */
+li.image:hover 
+{
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px -5px rgba(0,0,0,0.6);
+  transform: translateY(-10px);
+  transition-duration: 0.5s;
+}
+
 div#itemlist .item ul
 {
   padding:0;
@@ -165,10 +163,13 @@ div#itemlist .item ul
   padding-right: 5px;
 }
 
+/* 画像サイズ設定・画像周りの色 */
 .img
 {
   width: 270px;
-  height: 180px;
+  height: 190px;
+  border: 10px solid rgba(200, 28, 28, 0.2);
+  transition-duration: 0.5s;
 }
 
 div#search

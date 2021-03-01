@@ -18,7 +18,7 @@
       <div class="errmessage"><span class="red">{% if error is not empty %} {{error}} {% endif %}</span></div>
       <input type="submit" value="送信">
       <ul>
-        <li><a href="Login.php">ログイン画面に戻る</a></li>
+        <li><a href="{{constant('cafeshop\\Bootstrap::ENTRY_URL')}}login.php">ログイン画面に戻る</a></li>
       </ul>
     </form>
   </div>
